@@ -2,6 +2,13 @@
 
 import * as bin from './index';
 import config from '../../../config.json';
+const songs = [
+  { name: 'pentakill', file:'music.mp3' },
+  { name: 'kaptan kadavra', file:'music3.mp3' },
+  { name: 'sulfur ensemble', file:'music2.mp3' },
+  
+  // add more songs here
+];
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -47,8 +54,8 @@ export const resume = async (args: string[]): Promise<string> => {
 export const donate = async (args: string[]): Promise<string> => {
   return `thank you for your interest. 
 here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
+- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.polgon}" target="_blank">polygon</a></u>
+- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.ethernum}" target="_blank">patreon</a></u>
 `;
 };
 
@@ -129,8 +136,45 @@ export const nvim = async (args: string[]): Promise<string> => {
   return `'nvim'? too fancy. why not 'emacs'?`;
 };
 
+ let audio: HTMLAudioElement;
+
+ export const radio = async (args: string[]): Promise<string> => {
+  const randomIndex = Math.floor(Math.random() * songs.length);
+  const song = songs[randomIndex];
+  audio = new Audio(song.file);
+  audio.play();
+  return `Now playing: ${song.name} please do not write radio two times its breaking the music`;
+};
+ 
+ export const radiostop = async (args: string[]): Promise<string> => {
+   if (audio && !audio.paused) {
+     audio.pause();
+     audio.src = '';
+     audio.load();
+     audio = null;
+     return `Music stopped.`;
+   } else {
+     return `Music is not currently playing.`;
+   }
+ };
+ export const radioremove = async (args: string[]): Promise<string> => {
+  if (audio) {
+    audio.pause();
+    audio.src = '';
+    audio.load();
+    audio.parentNode?.removeChild(audio);
+    audio = null;
+    return `Music element removed.`;
+  } else {
+    return `Music is not currently playing.`;
+  }
+};
 export const emacs = async (args?: string[]): Promise<string> => {
   return `you know what? just use vscode.`;
+};
+export const emre = async (args?: string[]): Promise<string> => {
+  window.open('https://www.youtube.com/watch?v=-bKpC-uDHnc', '_blank');
+  return `ın ın ın ınının ınının`;
 };
 
 export const sudo = async (args?: string[]): Promise<string> => {
@@ -141,14 +185,11 @@ export const sudo = async (args?: string[]): Promise<string> => {
 // Banner
 export const banner = (args?: string[]): string => {
   return `
-█████        ███                       ███████████                                   
-░░███        ░░░                       ░█░░░███░░░█                                   
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████  
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███ 
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
- ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
+  ▄• ▄▌·▄▄▄▄•▪         ▐ ▄ 
+  █▪██▌▪▀·.█▌██ ▪     •█▌▐█
+  █▌▐█▌▄█▀▀▀•▐█· ▄█▀▄ ▐█▐▐▌
+  ▐█▄█▌█▌▪▄█▀▐█▌▐█▌.▐▌██▐█▌
+   ▀▀▀ ·▀▀▀ •▀▀▀ ▀█▄▀▪▀▀ █▪
 
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
