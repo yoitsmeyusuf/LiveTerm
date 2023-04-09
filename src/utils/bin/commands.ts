@@ -55,7 +55,7 @@ export const donate = async (args: string[]): Promise<string> => {
   return `thank you for your interest. 
 here are the ways you can support my work:
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.polgon}" target="_blank">polygon</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.ethernum}" target="_blank">patreon</a></u>
+- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.ethernum}" target="_blank">ethereum</a></u>
 `;
 };
 
