@@ -54,6 +54,7 @@ export const resume = async (args: string[]): Promise<string> => {
 export const donate = async (args: string[]): Promise<string> => {
   return `thank you for your interest. 
 here are the ways you can support my work:
+- <u><a class="text-light-blue dark:text-dark-blue underline" target="_blank">0x7b42f18B892d9B1F9bE7F38E03dc7AD611adB89D</a></u>
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.polgon}" target="_blank">polygon</a></u>
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.ethernum}" target="_blank">ethereum</a></u>
 `;
