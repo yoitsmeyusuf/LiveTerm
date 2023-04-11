@@ -1,4 +1,5 @@
 import axios from 'axios';
+import App from 'next/app';
 import config from '../../config.json';
 
 export const getProjects = async () => {
@@ -8,10 +9,10 @@ export const getProjects = async () => {
   return data;
 };
 
-export const getReadme = async () => {
-  const { data } = await axios.get(config.readmeUrl);
-  return data;
-};
+// export const getReadme = async () => {
+//   const { data } = await axios.get(config.readmeUrl);
+//   return data;
+// };
 
 export const getWeather = async (city: string) => {
   try {
@@ -28,3 +29,20 @@ export const getQuote = async () => {
     quote: `“${data.content}” — ${data.author}`,
   };
 };
+
+export const getLoc = async () => {
+
+
+  const { data } = await axios.get(`https://ipinfo.io/${await getIp()}/?token=cbc83f4c3b1b1b`);
+  return  data.city;
+    
+  
+};
+
+export const getIp = async () =>{
+
+  const { data } = await axios.get(`https://api.ipify.org?format=json`);
+  return data["ip"]
+
+}
+

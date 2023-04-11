@@ -36,9 +36,9 @@ const sumfetch = async (args: string[]): Promise<string> => {
    ▓▓      ▐▓▓    ▓▓    ▐▓▓     ▓▓           <u><a href="https://linkedin.com/in/${config.social.linkedin}" target="_blank">linkedin.com/in/${config.social.linkedin}</a></u>
     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓           -----------
       ▓▓▓   ▐▓▓   ▓▓   ▓▓▓   ▓▓▀             DONATE 
-        ▀▓▓▄▄ ▀▓▓▄▓▓▄▓▓▓▄▄▓▓▀                <u><a href="${config.donate_urls.polgon}" target="_blank">Polygon</a></u>
-            ▀▓▓▓▓▓▓▓▓▓▓▓▀▀                   <u><a href="${config.donate_urls.ethernum}" target="_blank">Etherenum</a></u>
-
+        ▀▓▓▄▄ ▀▓▓▄▓▓▄▓▓▓▄▄▓▓▀                <u><a href="${config.donate_urls.polgon}" target="_blank">Polygon</a></u>
+            ▀▓▓▓▓▓▓▓▓▓▓▓▀▀                   <u><a href="${config.donate_urls.ethernum}" target="_blank">Ethereum</a></u>
+                                             <u><a href="" target="_blank">0x7b42f18B892d9B1F9bE7F38E03dc7AD611adB89D</a></u>
 `;
   }
 };

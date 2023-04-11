@@ -109,10 +109,9 @@ export const whoami = async (args: string[]): Promise<string> => {
 };
 
 export const ls = async (args: string[]): Promise<string> => {
-  return `a
-bunch
-of
-fake
+  return `projects
+tryradio
+cryptowalletsecretkey.txt
 directories`;
 };
 
@@ -183,6 +182,9 @@ export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission denied: with little power comes... no responsibility? `;
 };
 
+export const cat = async (args?: string[]): Promise<string> => {
+  return `meow`;
+};
 // Banner
 export const banner = (args?: string[]): string => {
   return `
