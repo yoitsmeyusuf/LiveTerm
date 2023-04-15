@@ -13,13 +13,10 @@ export const getProjects = async () => {
 //   const { data } = await axios.get(config.readmeUrl);
 //   return data;
 // };
-<<<<<<< HEAD
 // export const getReadme = async () => {
 //   const { data } = await axios.get(config.readmeUrl);
 //   return data;
 // };
-=======
->>>>>>> 686cc609bf5f15d2d7bc268a2b90b73c722c6a8c
 
 export const getWeather = async (city: string) => {
   try {
