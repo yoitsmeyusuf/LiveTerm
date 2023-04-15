@@ -1,9 +1,8 @@
-// // List of commands that require API calls
-
 import { getProjects } from '../api';
 import { getQuote } from '../api';
-import { getReadme } from '../api';
+// import { getReadme } from '../api';
 import { getWeather } from '../api';
+import { getLoc } from '../api';
 
 export const projects = async (args: string[]): Promise<string> => {
   const projects = await getProjects();
@@ -14,17 +13,17 @@ export const projects = async (args: string[]): Promise<string> => {
     )
     .join('\n');
 };
-
 export const quote = async (args: string[]): Promise<string> => {
   const data = await getQuote();
   return data.quote;
 };
 
-export const readme = async (args: string[]): Promise<string> => {
-  const readme = await getReadme();
-  return `Opening GitHub README...\n
-  ${readme}`;
-};
+// export const readme = async (args: string[]): Promise<string> => {
+//   const readme = await getReadme();
+//   return `Opening GitHub README...\n
+//   ${readme}`;
+// };
+
 
 export const weather = async (args: string[]): Promise<string> => {
   const city = args.join('+');
@@ -34,3 +33,8 @@ export const weather = async (args: string[]): Promise<string> => {
   const weather = await getWeather(city);
   return weather;
 };
+export const mkdir = async (args?: string[]): Promise<string> => {
+
+  const loc = await getLoc()
+  return `you are in ${loc} `;
+}
