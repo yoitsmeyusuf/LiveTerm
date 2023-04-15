@@ -23,10 +23,7 @@ export const quote = async (args: string[]): Promise<string> => {
 //   return `Opening GitHub README...\n
 //   ${readme}`;
 // };
-<<<<<<< HEAD
 
-=======
->>>>>>> 686cc609bf5f15d2d7bc268a2b90b73c722c6a8c
 
 export const weather = async (args: string[]): Promise<string> => {
   const city = args.join('+');
@@ -37,14 +34,8 @@ export const weather = async (args: string[]): Promise<string> => {
   return weather;
 };
 export const mkdir = async (args?: string[]): Promise<string> => {
-<<<<<<< HEAD
+
 
   const loc = await getLoc()
   return `you are in ${loc} `;
-}
-=======
-  
-  const loc = await getLoc()
-  return `you are in ${loc} `;
-};
->>>>>>> 686cc609bf5f15d2d7bc268a2b90b73c722c6a8c
+}  

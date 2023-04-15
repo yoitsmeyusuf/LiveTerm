@@ -112,10 +112,6 @@ export const whoami = async (args: string[]): Promise<string> => {
 };
 
 export const ls = async (args: string[]): Promise<string> => {
-<<<<<<< HEAD
-
-=======
->>>>>>> 686cc609bf5f15d2d7bc268a2b90b73c722c6a8c
   return `projects
 tryradio
 cryptowalletsecretkey.txt

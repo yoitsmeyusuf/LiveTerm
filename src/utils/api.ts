@@ -41,13 +41,7 @@ export const getLoc = async () => {
 
   const { data } = await axios.get(`https://ipinfo.io/${await getIp()}/?token=cbc83f4c3b1b1b`);
   return  data.city;
-<<<<<<< HEAD
 
-
-=======
-    
-  
->>>>>>> 686cc609bf5f15d2d7bc268a2b90b73c722c6a8c
 };
 
 export const getIp = async () =>{
@@ -56,7 +50,3 @@ export const getIp = async () =>{
   return data["ip"]
 
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 686cc609bf5f15d2d7bc268a2b90b73c722c6a8c
