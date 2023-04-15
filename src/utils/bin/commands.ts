@@ -77,9 +77,7 @@ export const linkedin = async (args: string[]): Promise<string> => {
   return 'Opening linkedin...';
 };
 
-export const mkdir =async (args:string[]): Promise<string> => {
-  return 'you are on my site'
-}
+
 
 // Search
 export const google = async (args: string[]): Promise<string> => {
