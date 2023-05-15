@@ -33,7 +33,7 @@ export const weather = async (args: string[]): Promise<string> => {
   const weather = await getWeather(city);
   return weather;
 };
-export const mkdir = async (args?: string[]): Promise<string> => {
+export const loc = async (args?: string[]): Promise<string> => {
 
 
   const loc = await getLoc()
